@@ -51,3 +51,35 @@ type ID = number | string;
 
 const userId: ID = 123;
 
+// Interfaces
+
+interface Transaction {
+    payerAccountNumber: number;
+    payeeAccountNumber: number;
+}
+
+interface BankAccount {
+    accountNumber: number;
+    accountHolder: string;
+    balance: number;
+    isActive: boolean;
+    transactions: Transaction[];
+}
+
+const transaction1: Transaction = {
+    payeeAccountNumber: 1234,
+    payerAccountNumber: 5678
+}
+
+const transaction2: Transaction = {
+    payeeAccountNumber: 1234,
+    payerAccountNumber: 5678
+}
+
+const bankAccount: BankAccount = {
+    accountNumber: 1234,
+    accountHolder: "John Doe",
+    balance: 100,
+    isActive: true,
+    transactions: [transaction1, transaction2]
+}
