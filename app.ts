@@ -12,3 +12,42 @@ function getTotal(numbers: Array<number>): number {
 }
 
 console.log(getTotal([2, 5, 3]))
+
+const user = {
+    firstName: "John",
+    lastName: "Doe",
+    role: 'professor'
+}
+
+console.log(user.firstName);
+
+// number
+// string
+// string[]
+// boolean
+
+
+// Type  Alias => Custom Type
+
+type User = {
+    name: string;
+    age: number;
+    address?: string;
+}
+
+const newUser: User = {
+    name: "Hamza",
+    age: 29,
+}
+
+function login(userData: User): User {
+    return userData
+}
+
+console.log(login(newUser));
+
+// Union Type
+type ID = number | string;
+
+const userId: ID = 123;
+
