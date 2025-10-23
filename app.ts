@@ -134,6 +134,20 @@ const fruit: Fruit = {
 }
 
 // Other Example
-
 type SanitizedString = string;
 type EvenNumber = number;
+
+// Unions
+type Id = number | string;
+
+function printId(id: ID) {
+    // Narrowing
+    if(typeof id === "string") {
+        console.log(id.toUpperCase());
+    }else{
+        console.log(id);
+    }
+}
+
+printId("1");
+printId(12);
