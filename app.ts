@@ -83,3 +83,57 @@ const bankAccount: BankAccount = {
     isActive: true,
     transactions: [transaction1, transaction2]
 }
+
+
+//  Extend Interface
+interface Book {
+    name: string;
+    price: number;
+}
+
+interface EBook extends Book {
+    fileSize: number;
+    format: string;
+}
+
+interface AudioBook extends EBook {
+    duration: number;
+}
+
+const book: Book = {
+    name: "Atomic Habits",
+    price: 1200,
+}
+
+const ebook: EBook = {
+    ...book,
+    fileSize: 300,
+    format: "pdf",
+}
+
+const audioBook: AudioBook = {
+    ...ebook,
+    duration: 1
+}
+
+// Merge Interface
+
+interface Fruit {
+    name: string;
+    price: number;
+}
+
+interface Fruit {
+    unit: string;
+}
+
+const fruit: Fruit = {
+    name: "Mango",
+    price: 200,
+    unit: "kg"
+}
+
+// Other Example
+
+type SanitizedString = string;
+type EvenNumber = number;
