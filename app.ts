@@ -139,7 +139,6 @@ type EvenNumber = number;
 
 // Unions
 type Id = number | string;
-
 function printId(id: ID) {
     // Narrowing
     if(typeof id === "string") {
@@ -148,6 +147,13 @@ function printId(id: ID) {
         console.log(id);
     }
 }
-
 printId("1");
 printId(12);
+
+
+function getFirstThree(x: string | number[]){
+        return x.slice(0,3);
+}
+
+console.log(getFirstThree("hello"));
+console.log(getFirstThree([1,2,3,4,5]));
