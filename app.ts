@@ -190,7 +190,7 @@ interface HasAge {
     age: number;
 }
 
-function getOldest(people: HasAge[]): HasAge {
+function getOldest<T extends HasAge>(people: T[]): T {
     return people.sort((a, b) => b.age - a.age)[0]
 }
 
@@ -203,4 +203,6 @@ interface Player{
 const players: Player[] = [{name:'Hamza', age:29}, {name:'Talha', age:25}]
 
 // assertion
-const player: Player = getOldest(players) as Player;
+// const player: Player = getOldest(players) as Player;
+// Generic
+const player = getOldest<Player>(players);
