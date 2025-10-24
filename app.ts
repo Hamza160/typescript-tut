@@ -139,21 +139,48 @@ type EvenNumber = number;
 
 // Unions
 type Id = number | string;
+
 function printId(id: ID) {
     // Narrowing
-    if(typeof id === "string") {
+    if (typeof id === "string") {
         console.log(id.toUpperCase());
-    }else{
+    } else {
         console.log(id);
     }
 }
+
 printId("1");
 printId(12);
 
 
-function getFirstThree(x: string | number[]){
-        return x.slice(0,3);
+function getFirstThree(x: string | number[]) {
+    return x.slice(0, 3);
 }
 
 console.log(getFirstThree("hello"));
-console.log(getFirstThree([1,2,3,4,5]));
+console.log(getFirstThree([1, 2, 3, 4, 5]));
+
+
+// Generics
+
+function logString(arg: string) {
+    console.log(arg);
+    return arg;
+}
+
+function logNumber(arg: number) {
+    console.log(arg);
+    return arg;
+}
+
+function logArray(arg: any[]) {
+    console.log(arg);
+    return arg;
+}
+
+function logAnything<T>(arg: T): T {
+    console.log(arg);
+    return arg;
+}
+
+logAnything([34, 20])
