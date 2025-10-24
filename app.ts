@@ -184,3 +184,23 @@ function logAnything<T>(arg: T): T {
 }
 
 logAnything([34, 20])
+
+
+interface HasAge {
+    age: number;
+}
+
+function getOldest(people: HasAge[]): HasAge {
+    return people.sort((a, b) => b.age - a.age)[0]
+}
+
+const people = [{age:30},  {age:40}]
+
+interface Player{
+    age: number;
+    name: string;
+}
+const players: Player[] = [{name:'Hamza', age:29}, {name:'Talha', age:25}]
+
+// assertion
+const player: Player = getOldest(players) as Player;
