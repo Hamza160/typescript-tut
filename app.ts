@@ -281,8 +281,17 @@ const auth: IAuth = {
     }
 }
 
+// Type Inference
 
-
+let num = 1
+let nam = 'hamza'
+let isMarried = true
+let address = {
+    street: "127.0.0.1",
+    city: "Hamza",
+    state: "Hamza",
+    country: "Hamza",
+}
 
 
 
