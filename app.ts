@@ -194,13 +194,14 @@ function getOldest<T extends HasAge>(people: T[]): T {
     return people.sort((a, b) => b.age - a.age)[0]
 }
 
-const people = [{age:30},  {age:40}]
+const people = [{age: 30}, {age: 40}]
 
-interface Player{
+interface Player {
     age: number;
     name: string;
 }
-const players: Player[] = [{name:'Hamza', age:29}, {name:'Talha', age:25}]
+
+const players: Player[] = [{name: 'Hamza', age: 29}, {name: 'Talha', age: 25}]
 
 // assertion
 // const player: Player = getOldest(players) as Player;
@@ -209,15 +210,15 @@ const player = getOldest<Player>(players);
 
 
 interface IPost {
-    id:number;
-    title:string;
-    description:string;
+    id: number;
+    title: string;
+    description: string;
 }
 
 interface IUser {
-    id:number;
+    id: number;
     name: string;
-    age:number;
+    age: number;
 }
 
 const fetchPostData = async (path: string): Promise<IPost[]> => {
@@ -235,7 +236,7 @@ const fetchData = async <ResultType>(path: string): Promise<ResultType> => {
     return response.json();
 }
 
-(async() => {
+(async () => {
     // const posts = await fetchPostData('posts')
     // const users = await fetchUserData('users')
     const users = await fetchData<IUser[]>('users')
@@ -246,28 +247,39 @@ const fetchData = async <ResultType>(path: string): Promise<ResultType> => {
 
 
 // DuckTyping Structural Typing
-interface ICredentials{
-    username:string;
-    password:string;
-    isAdmin?:boolean;
+interface ICredentials {
+    username: string;
+    password: string;
+    isAdmin?: boolean;
 }
 
-function login(credentials: ICredentials){
+function login(credentials: ICredentials) {
     console.log(credentials);
     return true
 }
 
 const logUser = {
-    username:"hamzaashraf",
-    password:"123456",
-    isAdmin:true
+    username: "hamzaashraf",
+    password: "123456",
+    isAdmin: true
 }
 
 login(logUser);
 
+interface IAuth {
+    username: string;
+    password: string;
+    login: (username: string, password: string) => boolean;
+}
 
-
-
+const auth: IAuth = {
+    username: "hamza",
+    password: "123456",
+    login: (username: string, password: string): boolean => {
+        //
+        return true
+    }
+}
 
 
 
