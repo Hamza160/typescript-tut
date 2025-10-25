@@ -206,3 +206,61 @@ const players: Player[] = [{name:'Hamza', age:29}, {name:'Talha', age:25}]
 // const player: Player = getOldest(players) as Player;
 // Generic
 const player = getOldest<Player>(players);
+
+
+interface IPost {
+    id:number;
+    title:string;
+    description:string;
+}
+
+interface IUser {
+    id:number;
+    name: string;
+    age:number;
+}
+
+const fetchPostData = async (path: string): Promise<IPost[]> => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`)
+    return response.json();
+}
+
+const fetchUserData = async (path: string): Promise<IUser[]> => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`)
+    return response.json();
+}
+
+const fetchData = async <ResultType>(path: string): Promise<ResultType> => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`)
+    return response.json();
+}
+
+(async() => {
+    // const posts = await fetchPostData('posts')
+    // const users = await fetchUserData('users')
+    const users = await fetchData<IUser[]>('users')
+    const posts = await fetchData<IPost[]>('posts')
+
+
+})()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
