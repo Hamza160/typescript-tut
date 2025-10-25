@@ -40,11 +40,11 @@ const newUser: User = {
     age: 29,
 }
 
-function login(userData: User): User {
-    return userData
-}
-
-console.log(login(newUser));
+// function login(userData: User): User {
+//     return userData
+// }
+//
+// console.log(login(newUser));
 
 // Union Type
 type ID = number | string;
@@ -245,9 +245,25 @@ const fetchData = async <ResultType>(path: string): Promise<ResultType> => {
 })()
 
 
+// DuckTyping Structural Typing
+interface ICredentials{
+    username:string;
+    password:string;
+    isAdmin?:boolean;
+}
 
+function login(credentials: ICredentials){
+    console.log(credentials);
+    return true
+}
 
+const logUser = {
+    username:"hamzaashraf",
+    password:"123456",
+    isAdmin:true
+}
 
+login(logUser);
 
 
 
