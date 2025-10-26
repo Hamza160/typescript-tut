@@ -191,7 +191,7 @@ interface HasAge {
 }
 
 function getOldest<T extends HasAge>(people: T[]): T {
-    return people.sort((a, b) => b.age - a.age)[0]
+    return people.sort((a, b) => b.age - a.age)[0]!
 }
 
 const people = [{age: 30}, {age: 40}]
