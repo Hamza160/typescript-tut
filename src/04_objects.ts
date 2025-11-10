@@ -26,7 +26,7 @@ type User2 = { email: string | undefined };
 
 // Index Signature
 type Count = { [k: string]: number };
-type Count1 = Record<"likes" | "views" | "shares", number>;
+type Count1 = Record<"likes" | "views" | "shares" | "randoms", number>;
 
 const c1: Count = {whatever: 1};
 const c2: Count1 = {likes: 1, views:1, shares: 1}
