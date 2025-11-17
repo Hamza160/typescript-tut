@@ -7,6 +7,7 @@ xss[0] = 9;
 // yss.pop()
 // yss.splice(0, 1)
 function sum(sums) {
+    // here the array will be read only and we can't do anything
     return sums.reduce((acc, cur) => acc + cur, 0);
 }
-sum(yss);
+sum(xss); // we can pass immutable or muteable array here
